@@ -1,22 +1,33 @@
 import React from 'react'
-import Image from "next/image"
 
-import githubIcon from "../images/githubIcon64x64.png";
+type SocialLinksProps = {
+	socials: [{
+		name: string
+		image: string
+	}]
+}
 
-export default function SocialLinks() {
+type SocialProps = {
+	socialName: string
+	image: string
+}
+
+export default function SocialLinks(props: SocialLinksProps) {
   return (
     <div className="flex justify-evenly">
-        <SocialLink />
-        <SocialLink />
-        <SocialLink />
+        {
+			props.socials.map(social => {
+				return <SocialLink key={social.name} socialName={social.name} image={social.image} />
+			})
+		}
     </div>
   )
 }
 
-function SocialLink() {
+function SocialLink(props: SocialProps) {
   return (
-    <div className="flex flex-col">
-        <Image src={githubIcon} width={32} height={50} />
+    <div className="flex flex-col items-center">
+        <img src={props.image} alt={props.socialName + " Icon"} className="w-9 h-9" />
         <h3>GitHub</h3>
     </div>
   )
