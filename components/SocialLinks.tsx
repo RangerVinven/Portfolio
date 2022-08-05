@@ -1,10 +1,10 @@
 import React from 'react'
 
 type SocialLinksProps = {
-	socials: [{
+	socials: {
 		name: string
 		image: string
-	}]
+	}[]
 }
 
 type SocialProps = {
