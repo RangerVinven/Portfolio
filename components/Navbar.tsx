@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/Image'
 
-import githubIcon from "../images/githubIcon64x64.png";
+import githubIcon from "../public/images/githubIcon64x64.png";
 
 export default function Navbar() {
   return (
